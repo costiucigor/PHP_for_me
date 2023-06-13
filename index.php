@@ -20,6 +20,20 @@ include "data_types.php";
             font-size: 24px;
             margin-top: 20px;
         }
+
+        .progress-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #E0E0E0;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #FF0000;
+        }
     </style>
 </head>
 <body>
@@ -39,10 +53,16 @@ $targetDate = strtotime("+1 year");
 $currentDate = time();
 $secondsDiff = $targetDate - $currentDate;
 $daysDiff = floor($secondsDiff / (60 * 60 * 24));
+
+$progressPercentage = ($daysDiff / 365) * 100;
 ?>
 
 <div class="countdown">
     Days until I buy a sports car: <?php echo $daysDiff; ?> days
+</div>
+
+<div class="progress-bar">
+    <div class="progress-bar-fill" style="width: <?php echo $progressPercentage; ?>%;"></div>
 </div>
 </body>
 </html>
