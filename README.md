@@ -13,4 +13,3 @@ PHP weaves a tapestry, sublime.
 With syntax and functions, it constructs a way,
 For Major Tom's odyssey, day by day.
 
-merge master into main
