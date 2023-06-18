@@ -1,25 +1,26 @@
 <?php
 
-// Integer
-$number = 10;
+session_start();
 
-// Floating point number
-$float = 3.14;
-
-// Boolean
-$flag = true;
-
-// String
-$text = "test";
-
-// Array
-$array = [1, 2, 3, 4, 5];
-
-// Object
-$object = new stdClass();
-
-// Null
-$nullValue = null;
-
-echo $text;
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Dashboard</title>
+</head>
+<body>
+<h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+<h2>Quiz Categories:</h2>
+<ul>
+    <li><a href="quiz.php?category=science">Science</a></li>
+    <li><a href="quiz.php?category=history">History</a></li>
+    <li><a href="quiz.php?category=geography">Geography</a></li>
+</ul>
+<a href="logout.php">Logout</a>
+</body>
+</html>
 
